@@ -1,0 +1,30 @@
+[
+  {
+    "collection": "forms",
+    "as": "f",
+    "data": {
+      "name": "Учебная заявка",
+      "description": "Не вводите личные документы.",
+      "questions": "Учебная тема\nУдобный день",
+      "status": "published"
+    }
+  },
+  {
+    "collection": "submissions",
+    "error": "каждый",
+    "data": {
+      "form": "$f",
+      "answers": "[\"Одна строка\"]",
+      "status": "new"
+    }
+  },
+  {
+    "collection": "submissions",
+    "data": {
+      "form": "$f",
+      "answers": "[\"Тестовая тема\",\"Понедельник\"]",
+      "status": "new"
+    },
+    "expect": "Заявок: 1"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "formakz",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Настройка текстовой формы и приём публичных заявок в закрытый кабинет с проверкой обязательных ответов.",
+  "engines": {
+    "node": ">=24.15 <25"
+  },
+  "scripts": {
+    "start": "node start.js",
+    "test": "node --test tests/*.test.js"
+  }
+}

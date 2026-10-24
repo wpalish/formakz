@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-24",
+  "version": "0.1.0",
+  "runtime": "Node 24.19.0",
+  "tests": {
+    "slug": "formakz",
+    "tests": 5,
+    "pass": true,
+    "runtime": "v24.19.0"
+  },
+  "browser": {
+    "slug": "formakz",
+    "status": "ui_workflow_passed",
+    "saved_operations": 2,
+    "labels": {
+      "f": "Учебная заявка"
+    },
+    "reference": 99
+  },
+  "screens": [
+    "../.impeccable/review/desktop.jpg",
+    "../.impeccable/review/mobile.jpg",
+    "../.impeccable/review/user-1280.jpg"
+  ],
+  "limitations": "Нет файлов, условных веток, оплаты, встроенного согласия на обработку данных и anti-bot сервиса. Для реального сбора данных оператор добавляет свой текст согласия и меры защиты.",
+  "deployment": "source repository; server checked locally only",
+  "security_audit": false,
+  "customer_validation": false,
+  "review": {
+    "disposition": "ship",
+    "scope": "Reviewer scored the listed fixes resolved; not a new whole-surface/security audit",
+    "record": "verdict-pass.md"
+  },
+  "correctionBrowser": {
+    "slug": "formakz",
+    "query": "Учебная заявка",
+    "result": "visible_label_and_no_results_recovery_passed"
+  }
+}
