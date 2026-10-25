@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-25",
+  "product": "formakz",
+  "baseline_commit": "7eb0efa",
+  "defect": "Existing submission editor omitted its saved archived form from the disabled source selector;questions/answers and reviewed save already worked.",
+  "before_fix": {
+    "selector": {
+      "disabled": true,
+      "missing": true,
+      "options": [
+        "Выберите значение",
+        "SYNTHETIC live request form"
+      ],
+      "value": ""
+    },
+    "baseline_browser_review_saved": true,
+    "baseline_lifecycle_controls_passed": 2,
+    "controls_note": "Both added server/persistence controls passed on baseline. No server-save failure or newly fixed public-route defect is claimed."
+  },
+  "policy": "Retain current saved archived form label with Archive marker;keep source selector disabled. Other archived forms remain omitted. Domain/server/schema unchanged.",
+  "tests": {
+    "passed": 7,
+    "failed": 0,
+    "runtime": "v24.19.0",
+    "log": "docs/test-output.txt",
+    "lifecycle": "tests/history.test.js",
+    "coverage": [
+      "archived questions/answers/reference/review save retained across real file restart and empty restore",
+      "answers immutable, including on restored history;all state and audit unchanged on refusal",
+      "public GET/stale POST reject draft and archived forms without workspace/audit changes",
+      "original public success and auth/CSRF/Origin/cookie/conflict tests retained"
+    ]
+  },
+  "browser": {
+    "data": "synthetic only,localhost8833",
+    "selector_after": {
+      "disabled": true,
+      "options": [
+        "Выберите значение",
+        "SYNTHETIC archived request form · Архив",
+        "SYNTHETIC live request form"
+      ],
+      "selected": "SYNTHETIC archived request form · Архив",
+      "value": "0e2c6e64-1910-4f33-a7ac-4845eb7ba387"
+    },
+    "existing_http_guards": {
+      "existing_server_controls_not_new_fix": true,
+      "baseline_browser_review_save_worked": true,
+      "all6_rejections_preserved_entire_state_and_audit": true,
+      "revision": 8,
+      "audit_events": 8,
+      "results": [
+        {
+          "kind": "closed_public_form",
+          "method": "GET",
+          "status": 400,
+          "error": "Форма не найдена или ещё не опубликована."
+        },
+        {
+          "kind": "closed_public_form",
+          "method": "POST",
+          "status": 400,
+          "error": "Форма не найдена или ещё не опубликована."
+        },
+        {
+          "kind": "closed_public_form",
+          "method": "GET",
+          "status": 400,
+          "error": "Форма не найдена или ещё не опубликована."
+        },
+        {
+          "kind": "closed_public_form",
+          "method": "POST",
+          "status": 400,
+          "error": "Форма не найдена или ещё не опубликована."
+        },
+        {
+          "kind": "immutable_submission_form",
+          "status": 400,
+          "error": "Утверждённую запись нельзя менять. Создайте новую версию."
+        },
+        {
+          "kind": "immutable_submission_answers",
+          "status": 400,
+          "error": "Утверждённую запись нельзя менять. Создайте новую версию."
+        }
+      ]
+    },
+    "saved_and_reloaded": {
+      "archived_form_label_retained": true,
+      "reference_still_disabled": true,
+      "unrelated_archive_not_offered": true,
+      "baseline_review_already_saved": true,
+      "fixed_editor_review_saved": true,
+      "original_questions_answers_and_other_submission_unchanged": true,
+      "valid_public_submission_saved": true,
+      "closed_public_form_browser_rejected": true,
+      "revision": 10,
+      "audit_events": 10
+    },
+    "screens": [
+      "docs/before-missing-form.jpg",
+      "docs/selected-archive-restored.jpg",
+      "docs/live-submission-saved.jpg",
+      "docs/closed-public-form.jpg",
+      "docs/history-and-live-submission.jpg"
+    ]
+  },
+  "runtime": {
+    "main_pid": 79640,
+    "restarted": false,
+    "evidence": "work/program/runtime-checks/formakz-history-20261025",
+    "reason": "Only static option filter/label changed;existing process serves exact new app.js hash.18 saved workspaces unchanged."
+  },
+  "limits": [
+    "Reviewed is a manual staff mark,not proof of external service fulfilment",
+    "Shared workspace of one organization,not multi-tenant SaaS",
+    "No files,branching,payment,built-in data-consent flow or anti-bot service",
+    "No fresh whole-interface/security audit or confirmed customer acceptance"
+  ]
+}
